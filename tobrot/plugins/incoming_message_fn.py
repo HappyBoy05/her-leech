@@ -68,7 +68,7 @@ async def incoming_message_f(client, message):
         LOGGER.info(dl_url)
         cf_name = None
     else:
-        await i_m_sefg.edit("😔 No downloading source provided 🙄")
+        await i_m_sefg.edit("😔 <b>No downloading source provided</b> 🙄")
         return
     if dl_url is not None:
         await i_m_sefg.edit_text("extracting links")
@@ -149,7 +149,7 @@ async def incoming_youtube_dl_f(client, message):
         yt_dl_pass_word = None
         cf_name = None
     else:
-        await i_m_sefg.edit("😔 No downloading source provided 🙄")
+        await i_m_sefg.edit("😔 <b>No downloading source provided</b> 🙄")
         return
     if dl_url is not None:
         await i_m_sefg.edit_text("extracting links")
@@ -200,7 +200,7 @@ async def g_yt_playlist(client, message):
         if user_command == GPYTDL_COMMAND.lower():
             is_cloud = True
     else:
-        await message.reply_text("😔 No downloading source provided 🙄", quote=True)
+        await message.reply_text("😔 <b>No downloading source provided</b> 🙄", quote=True)
         return
     if "youtube.com/playlist" in url:
         u_men = message.from_user.mention
@@ -211,7 +211,7 @@ async def g_yt_playlist(client, message):
         await yt_playlist_downg(message, i_m_sefg, client, is_cloud)
 
     else:
-        await message.reply_text("YouTube playlist link only 🙄", quote=True)
+        await message.reply_text("<b>YouTube playlist link only,</b> 🙄", quote=True)
 
 
 #
@@ -238,7 +238,7 @@ async def g_clonee(client, message):
 async def rename_tg_file(client, message):
     usr_id = message.from_user.id
     if not message.reply_to_message:
-        await message.reply("😔 No downloading source provided 🙄", quote=True)
+        await message.reply("😔 <b>No downloading source provided</b> 🙄", quote=True)
         return
     if len(message.command) > 1:
         new_name = (
@@ -289,5 +289,5 @@ async def rename_tg_file(client, message):
 
     else:
         await message.reply_text(
-            "😔 Provide new name of the file with extension 😐", quote=True
+            "😔 <b>Provide new name of the file with extension</b> 😐", quote=True
         )
