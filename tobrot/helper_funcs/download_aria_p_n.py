@@ -333,11 +333,11 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             await check_progress_for_dl(aria2, gid, event, previous_message)
         else:
             LOGGER.info(
-                f"Downloaded Successfully: `{file.name} ({file.total_length_string()})` 🤒"
+                f"📁 <b>Downloaded Successfully:</b> `{file.name} ({file.total_length_string()})` 🤒"
             )
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await event.edit(
-                f"Downloaded Successfully: `{file.name} ({file.total_length_string()})` 🤒"
+                f"📁 <b>Downloaded Successfully:</b> `{file.name} ({file.total_length_string()})` 🤒"
             )
             return True
     except aria2p.client.ClientException:
