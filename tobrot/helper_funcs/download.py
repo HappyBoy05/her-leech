@@ -48,10 +48,10 @@ async def down_load_media_f(client, message):
         await asyncio.sleep(10)
         if the_real_download_location:
             await mess_age.edit_text(
-                f"Downloaded to <code>{the_real_download_location}</code> in <u>{ms}</u> seconds"
+                f"📤 <b>Downloaded to</b> <code>{the_real_download_location}</code> <b>in</b> <u>{ms}</u> <b>Seconds</b>"
             )
         else:
-            await mess_age.edit_text("😔 Download Cancelled or some error happened")
+            await mess_age.edit_text("😔 <b>Download Cancelled or Some Error Happened</b>")
             return
         the_real_download_location_g = the_real_download_location
         if user_command == TELEGRAM_LEECH_UNZIP_COMMAND.lower():
@@ -63,12 +63,12 @@ async def down_load_media_f(client, message):
             except Exception as ge:
                 LOGGER.info(ge)
                 LOGGER.info(
-                    f"Can't extract {os.path.basename(the_real_download_location)}, Uploading the same file"
+                    f"<b>Can't Extract</b> {os.path.basename(the_real_download_location)}, <b>Uploading the Same File</b>"
                 )
         await upload_to_gdrive(the_real_download_location_g, mess_age, message, user_id)
     else:
         await mess_age.edit_text(
-            "Reply to a Telegram Media, to upload to the Cloud Drive."
+            "<b>Reply to a Telegram Media, to upload to the Cloud Drive.</b>"
         )
 
 
@@ -88,7 +88,7 @@ async def download_tg(client, message):
                 message=message.reply_to_message,
                 file_name=download_location,
                 progress=prog.progress_for_pyrogram,
-                progress_args=("trying to download", c_time),
+                progress_args=("<b>Tying to Download</b>", c_time),
             )
         except Exception as g_e:
             await mess_age.edit(str(g_e))
@@ -100,9 +100,9 @@ async def download_tg(client, message):
         await asyncio.sleep(5)
         if the_real_download_location:
             await mess_age.edit_text(
-                f"Downloaded to <code>{the_real_download_location}</code> in <u>{ms}</u> seconds"
+                f"📤 <b>Downloaded to <code>{the_real_download_location}</code> in <u>{ms}</u> Seconds</b>"
             )
         else:
-            await mess_age.edit_text("😔 Download Cancelled or some error happened")
+            await mess_age.edit_text("😔 <b>Download Cancelled or Some Error Happened</b>")
             return
     return the_real_download_location, mess_age
