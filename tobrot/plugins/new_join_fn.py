@@ -25,6 +25,6 @@ async def help_message_f(client, message):
     # display the /help
 
     await message.reply_text(
-        """<b>⚡ JOIN TORRENT MIRROR  GROUP\n\n 👉Link: <a href="https://t.me/MirrorALL">MIRRORALL GROUP</a>. By @FilmClubGroup</b>""",
+        """<b>⚡ JOIN OUR ALL CHANNEL LINKS\n\n 👉 Link: <a href="https://t.me/MalluMovies_Links">OUR ALL CHANNEL LINKS</a>. By @MalluMoviezGroup</b>""",
         disable_web_page_preview=True,
     )
