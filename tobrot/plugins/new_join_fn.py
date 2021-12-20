@@ -25,6 +25,6 @@ async def help_message_f(client, message):
     # display the /help
 
     await message.reply_text(
-        """<b>⚡ JOIN OUR ALL CHANNEL LINKS\n\n 👉 Link: <a href="https://t.me/MalluMovies_Links">OUR ALL CHANNEL LINKS</a>. By @MalluMoviezGroup</b>""",
+        """<b>⚡ JOIN OUR CHANNEL\n\n 👉 @HB4All""",
         disable_web_page_preview=True,
     )
